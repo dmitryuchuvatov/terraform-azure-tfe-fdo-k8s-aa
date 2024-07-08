@@ -1,0 +1,8 @@
+route53_zone            = "tf-support.hashicorpdemo.com"              # The domain used in the URL
+route53_subdomain       = "dmitry-fdo-aks"                            # The subdomain of the URL
+cert_email              = "dmitry.uchuvatov@hashicorp.com"            # Email address used to obtain SSL certificate
+region                  = "eu-west-1"                                 # AWS region to deploy in
+tfe_encryption_password = "Password1#"                                # TFE encryption password
+tfe_release             = "v202406-1"                                 # Which release version of TFE to install
+tfe_license             = "02MV4UU43BK5HGYYTOJZWFQMTMNNEWU33JLFVE..." # Value from the License file
+replica_count           = "1"                                         # Number of Pods/replicas

@@ -1,0 +1,27 @@
+replicaCount: ${replica_count}
+tls:
+  certData: ${full_chain}
+  keyData: ${private_key}
+  caCertData: ${full_chain}
+image:
+  repository: images.releases.hashicorp.com
+  name: hashicorp/terraform-enterprise
+  tag: ${tfe_release}
+env:
+  variables:
+    TFE_HOSTNAME: ${fqdn}
+    TFE_DATABASE_HOST: ${pg_address}
+    TFE_DATABASE_NAME: ${pg_dbname}
+    TFE_DATABASE_USER: ${pg_user}
+    TFE_OBJECT_STORAGE_TYPE: azure
+    TFE_OBJECT_STORAGE_AZURE_ACCOUNT_NAME: ${storage_account}
+    TFE_OBJECT_STORAGE_AZURE_CONTAINER: ${container_name}
+    TFE_REDIS_HOST: ${redis_host}
+    TFE_REDIS_USE_AUTH: "true"
+    TFE_IACT_SUBNETS: 0.0.0.0/0
+  secrets:
+    TFE_DATABASE_PASSWORD: ${pg_password}
+    TFE_ENCRYPTION_PASSWORD: ${enc_password}
+    TFE_OBJECT_STORAGE_AZURE_ACCOUNT_KEY: ${storage_account_key}
+    TFE_REDIS_PASSWORD: ${redis_primary_access_key}
+    TFE_LICENSE: ${tfe_license}
