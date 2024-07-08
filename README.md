@@ -92,3 +92,59 @@ resource_group = "dmitry-fdo-aks-resources"
 storage_account = "tfestorageaccount"
 storage_account_key = <sensitive>
 ```
+
+## Switch to `tfe` folder
+
+```
+cd tfe/
+```
+
+## Rename the file called `terraform.tfvars-sample` to `terraform.tfvars` and replace the values with your own.
+The current content is below:
+
+```
+route53_zone            = "tf-support.hashicorpdemo.com"   # The domain of your hosted zone in Route 53
+route53_subdomain       = "dmitry-fdo-aks"                        # The subomain of the URL
+cert_email              = "dmitry.uchuvatov@hashicorp.com" # The email address used to register the certificate
+region                  = "eu-west-1"                      # AWS region to deploy in
+tfe_encryption_password = "Password1#"                     # TFE encryption password
+tfe_release             = "v202406-1"                      # Which release version of TFE to install
+tfe_license             = "02MV4UU43..."                   # Value from the License file
+replica_count           = "1"                              # Number of Pods/replicas                                                                                                            
+```
+
+## Set AWS credentials
+
+```
+export AWS_ACCESS_KEY_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_SESSION_TOKEN=
+```
+
+## Terraform initialize
+
+```
+terraform init
+```
+
+## Terraform apply
+
+```
+terraform apply
+```
+
+When prompted, type **yes** and hit **Enter** to start installing TFE.
+
+After some time, you should see the similar result:
+
+```
+Apply complete! Resources: 8 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+tfe_url = "https://dmitry-fdo-aks.tf-support.hashicorpdemo.com"
+```
+
+## Next steps
+
+[Provision your first administrative user](https://developer.hashicorp.com/terraform/enterprise/flexible-deployments/install/initial-admin-user) and start using Terraform Enterprise.
