@@ -1,0 +1,6 @@
+environment_name    = "dmitry-fdo-aks"    # Name of the environment, used in naming of resources
+region              = "West Europe"       # Azure region to deploy in
+vnet_cidr           = "10.200.0.0/16"     # The IP range for the VNet in CIDR format default
+postgresql_user     = "postgres"          # Name of PostgreSQL user
+postgresql_password = "Password1#"        # Password for PostgreSQL account
+storage_name        = "tfestorageaccount" # Name used to create storage account. Can contain ONLY lowercase letters and numbers; must be unique across all existing storage account names in Azure
