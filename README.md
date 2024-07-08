@@ -2,7 +2,8 @@
 
 # Diagram
 
-WIP
+![tfe_fdo_aks_in_active-active_mode](https://github.com/dmitryuchuvatov/terraform-azure-tfe-fdo-k8s-aa/assets/119931089/d01508fd-cf1c-4671-b707-c6640fcd9193)
+
 
 # Prerequisites
 
